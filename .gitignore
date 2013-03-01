@@ -1,7 +1,9 @@
-*.class
-
+.project
+.classpath
+.settings
 .metadata
-.metadata/*
+
+*.class
 
 # Package Files #
 #*.jar
