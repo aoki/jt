@@ -12,4 +12,8 @@ public class UserForm {
 	public boolean isValid() {
 		return !userName.equals("") && !password.equals(""); 
 	}
+	
+	public String getErrorMessage() {
+		return "ユーザIDは必須項目です。";
+	}
 }
