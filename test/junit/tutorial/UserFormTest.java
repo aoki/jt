@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import java.util.ArrayList;
 
 public class UserFormTest {
 
@@ -18,6 +19,13 @@ public class UserFormTest {
 		String expected = "ユーザIDは必須項目です。";
 		String actual = sut.getErrorMessage();
 		assertThat(actual, is(expected));
+	}
+	@Test
+	public void addで要素を追加するとサイズが1となりgetで取得できる() throws Exception {
+		ArrayList<String> sut = new ArrayList<String>();
+		sut.add("Hello");
+		assertThat(sut.size(), is(1));
+		assertThat(sut.get(0), is("Hello"));
 	}
 
 }
