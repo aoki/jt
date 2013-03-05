@@ -16,4 +16,9 @@ public class UserForm {
 	public String getErrorMessage() {
 		return "ユーザIDは必須項目です。";
 	}
+	
+	// 副作用のないメソッド。何度実行してもオブジェクトに影響はない。
+	public static boolean isEmptyOrNull(String value) {
+		return value == null || value.isEmpty();
+	}
 }
