@@ -23,6 +23,9 @@ public class UserForm {
 	}
 
 	public int doSomething() {
+		if(userName.equals("ERROR")){
+			throw new IllegalArgumentException("Illegal Argument Exception");
+		}
 		return 108;
 	}
 }

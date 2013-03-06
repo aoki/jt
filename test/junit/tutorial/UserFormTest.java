@@ -40,17 +40,22 @@ public class UserFormTest {
 		assertThat(sut.get(0), is("World"));
 	}
 	@Test
-	public void Junitのアサーション() {
+	public void Junitのアサーション() throws Exception {
 		UserForm sut = new UserForm("", "1234");
 		Object expected = 108;
 		Object actual = sut.doSomething();
 		assertThat(actual, is(expected));
 	}
 	@Test
-	public void int型のアサーション() {
+	public void int型のアサーション() throws Exception {
 		UserForm sut = new UserForm("", "1234");
 		int expected = 108;
 		int actual = sut.doSomething();
 		assertThat(actual, is(expected));
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void 例外テスト() throws Exception {
+		UserForm sut = new UserForm("ERROR", "ERROR");
+		sut.doSomething();
 	}
 }
