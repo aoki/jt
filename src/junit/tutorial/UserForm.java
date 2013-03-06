@@ -21,4 +21,8 @@ public class UserForm {
 	public static boolean isEmptyOrNull(String value) {
 		return value == null || value.isEmpty();
 	}
+
+	public int doSomething() {
+		return 0;
+	}
 }

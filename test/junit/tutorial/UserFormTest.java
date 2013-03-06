@@ -39,4 +39,11 @@ public class UserFormTest {
 		assertThat(sut.size(), is(1));
 		assertThat(sut.get(0), is("World"));
 	}
+	@Test
+	public void Junitのアサーション() {
+		UserForm sut = new UserForm("", "1234");
+		Object expected = 0;
+		Object actual = sut.doSomething();
+		assertThat(actual, is(expected));
+	}
 }
