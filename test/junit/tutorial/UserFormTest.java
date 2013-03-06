@@ -27,5 +27,16 @@ public class UserFormTest {
 		assertThat(sut.size(), is(1));
 		assertThat(sut.get(0), is("Hello"));
 	}
-
+	@Test
+	public void 要素が2つ追加された状態で要素をremoveするとsizeが1となる() throws Exception {
+		// Setup
+		ArrayList<String> sut = new ArrayList<String>();
+		sut.add("Hello");
+		sut.add("World");
+		// Exercise
+		sut.remove(0);
+		// Verify
+		assertThat(sut.size(), is(1));
+		assertThat(sut.get(0), is("World"));
+	}
 }
