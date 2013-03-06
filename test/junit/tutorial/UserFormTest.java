@@ -42,8 +42,15 @@ public class UserFormTest {
 	@Test
 	public void Junitのアサーション() {
 		UserForm sut = new UserForm("", "1234");
-		Object expected = 0;
+		Object expected = 108;
 		Object actual = sut.doSomething();
+		assertThat(actual, is(expected));
+	}
+	@Test
+	public void int型のアサーション() {
+		UserForm sut = new UserForm("", "1234");
+		int expected = 108;
+		int actual = sut.doSomething();
 		assertThat(actual, is(expected));
 	}
 }

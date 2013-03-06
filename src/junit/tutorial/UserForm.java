@@ -23,6 +23,6 @@ public class UserForm {
 	}
 
 	public int doSomething() {
-		return 0;
+		return 108;
 	}
 }
