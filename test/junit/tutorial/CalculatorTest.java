@@ -29,6 +29,18 @@ public class CalculatorTest {
 		float actual = calc.divide(3, 2);
 		assertThat(actual, is(expected));
 	}
+	@Test
+	public void addに3と4を与えると7を返す() {
+		// SetUp - 初期化
+		Calculator sut = new Calculator();
+		sut.init();
+		// Exercise - テストの実行
+		int actual = sut.add(3, 4);
+		// Verify - 検証
+		assertThat(actual, is(7));
+		// TearDown - 後処理
+		sut.shutdown();
+	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void dvideで5と0のときIllegalArgumentExceptionを送出する() {
