@@ -13,4 +13,8 @@ public class AssertionTest {
 		assertThat(actual, is("Hello World"));
 	}
 
+	@Test
+	public void なにか難しいけど重要なテストケース() {
+		fail("TODO テストコードを実装する");
+	}
 }
