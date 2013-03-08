@@ -3,21 +3,21 @@ package junit.tutorial;
 public class Calculator {
 
 	public Calculator() {
-		System.out.println("Create new Calculator object.");
+		System.out.println("[C]Create new Calculator object.");
 	}
 
 	/**
 	 * 初期化処理
 	 */
 	public void init(){
-		System.out.println("Initialize Calculator object.");
+		System.out.println("\t[I]Initialize Calculator object.");
 	}
 
 	/**
 	 * 後処理
 	 */
 	public void shutdown(){
-		System.out.println("Shutdown Calculator object.");
+		System.out.println("\t\t[S]Shutdown Calculator object.");
 	}
 
 	/**

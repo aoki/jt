@@ -8,13 +8,14 @@ import org.junit.Ignore;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.BeforeClass;
+import org.junit.AfterClass;
 
 public class CalculatorTest {
 
 	private static final Calculator sut = new Calculator();
 
 	@BeforeClass
-	public static void setUpClass() {
+	public static void setUpClass() throws Exception {
 		System.out.println("Setup the CalculatorTest class.");
 	}
 
@@ -26,6 +27,11 @@ public class CalculatorTest {
 	@After
 	public void tearDown() throws Exception {
 		sut.shutdown();
+	}
+
+	@AfterClass
+	public static void tearDownClass() throws Exception {
+		System.out.println("Teardown the CalculatorTest class.");
 	}
 
 	// 日本語でTestメソッド名を書くと結果などが非常に見やすいため"推奨"されている．
