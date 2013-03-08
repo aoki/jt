@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 public class CalculatorTest {
 	
@@ -46,6 +47,15 @@ public class CalculatorTest {
 	public void dvideで5と0のときIllegalArgumentExceptionを送出する() {
 		Calculator calc = new Calculator();
 		calc.divide(5, 0);
+	}
+	@Ignore("未実装")
+	@Test
+	public void divideに4と2を与えると2を返す() throws Exception {
+		Calculator sut = new Calculator();
+		// Exercise - テストの実行
+		float actual = sut.divide(3, 4);
+		// Verify - 検証
+		assertThat(actual, is(7F));
 	}
 
 }
