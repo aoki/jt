@@ -17,4 +17,18 @@ public class AssertionTest {
 	public void なにか難しいけど重要なテストケース() {
 		fail("TODO テストコードを実装する");
 	}
+
+	@Test(expected = IllegalStateException.class)
+	public void timeoutがtrueのときにロジックが実行されないこと() {
+		// SetUp
+		Assertion sut = new Assertion();
+		Runnable logic = new Runnable() {
+			public void run(){
+				fail("run が呼ばれてしまった");
+			}
+		};
+		sut.timeOut = true;
+		// Exercise
+		sut.invoke(logic);
+	}
 }
