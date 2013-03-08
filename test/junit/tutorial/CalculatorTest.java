@@ -7,10 +7,16 @@ import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.Before;
 import org.junit.After;
+import org.junit.BeforeClass;
 
 public class CalculatorTest {
 
 	private static final Calculator sut = new Calculator();
+
+	@BeforeClass
+	public static void setUpClass() {
+		System.out.println("Setup the CalculatorTest class.");
+	}
 
 	@Before
 	public void setUp() throws Exception {
