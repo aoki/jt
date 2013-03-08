@@ -6,17 +6,22 @@ import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.Before;
+import org.junit.After;
 
 public class CalculatorTest {
 
-	private static Calculator sut;
+	private static final Calculator sut = new Calculator();
 
 	@Before
 	public void setUp() throws Exception {
-		sut = new Calculator();
 		sut.init();
 	}
-	
+
+	@After
+	public void tearDown() throws Exception {
+		sut.shutdown();
+	}
+
 	// 日本語でTestメソッド名を書くと結果などが非常に見やすいため"推奨"されている．
 	@Test
 	public void multiplyで3と4の乗算結果が取得できる() {

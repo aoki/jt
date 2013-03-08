@@ -17,6 +17,7 @@ public class Calculator {
 	 * 後処理
 	 */
 	public void shutdown(){
+		System.out.println("Shutdown Calculator object.");
 	}
 
 	/**
