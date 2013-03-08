@@ -57,7 +57,7 @@ public class CalculatorTest {
 		assertThat(actual, is(expected));
 	}
 	@Test
-	public void addに3と4を与えると7を返す() {
+	public void addに3と4を与えると7を返す() throws Exception {
 		// SetUp - 初期化
 		Calculator sut = new Calculator();
 		sut.init();
