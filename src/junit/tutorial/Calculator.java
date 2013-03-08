@@ -2,10 +2,15 @@ package junit.tutorial;
 
 public class Calculator {
 
+	public Calculator() {
+		System.out.println("Create new Calculator object.");
+	}
+
 	/**
 	 * 初期化処理
 	 */
 	public void init(){
+		System.out.println("Initialize Calculator object.");
 	}
 
 	/**

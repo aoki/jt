@@ -5,8 +5,17 @@ import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Before;
 
 public class CalculatorTest {
+
+	private static Calculator sut;
+
+	@Before
+	public void setUp() throws Exception {
+		sut = new Calculator();
+		sut.init();
+	}
 	
 	// 日本語でTestメソッド名を書くと結果などが非常に見やすいため"推奨"されている．
 	@Test
