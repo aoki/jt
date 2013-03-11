@@ -1,5 +1,6 @@
 package junit.tutorial;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.hamcrest.BaseMatcher;
@@ -11,6 +12,7 @@ public class IsDate extends BaseMatcher<Date> {
 	private final int yyyy;
 	private final int mm;
 	private final int dd;
+	private Object actual;
 
 	IsDate(int yyyy, int mm, int dd) {
 		this.yyyy = yyyy;
@@ -24,7 +26,14 @@ public class IsDate extends BaseMatcher<Date> {
 
 	@Override
 	public boolean matches(Object actual) {
-		return false;
+		this.actual = actual;
+		if (!(actual instanceof Date)) return false;
+		Calendar cal = Calendar.getInstance();
+		cal.setTime((Date)actual);
+		if (yyyy != cal.get(Calendar.YEAR)) return false;
+		if (mm != cal.get(Calendar.MONTH)) return false;
+		if (dd != cal.get(Calendar.DATE)) return false;
+		return true;
 	}
 
 	@Override
