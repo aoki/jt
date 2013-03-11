@@ -1,5 +1,6 @@
 package junit.tutorial;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -36,8 +37,15 @@ public class IsDate extends BaseMatcher<Date> {
 		return true;
 	}
 
+	// matches メソッドがfalseを返した場合このメソッドが呼び出される
+	// フレームワークが比較検証に失敗した理由を通知するメソッド
 	@Override
-	public void describeTo(Description arg0) {
+	public void describeTo(Description desc) {
+		desc.appendValue(String.format("%d/%02d/%02d", yyyy, mm, dd));
+		if (actual != null) {
+			desc.appendText(" but actual is ");
+			desc.appendValue(new SimpleDateFormat("yyyy//mm/dd").format((Date) actual));
+		}
 	}
 
 }
