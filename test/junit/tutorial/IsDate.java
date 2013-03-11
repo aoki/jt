@@ -21,10 +21,6 @@ public class IsDate extends BaseMatcher<Date> {
 		this.dd = dd;
 	}
 
-	public static Matcher<Date> dateOf(int yyyy, int mm, int dd) {
-		return new IsDate(yyyy, mm, dd);
-	}
-
 	@Override
 	public boolean matches(Object actual) {
 		this.actual = actual;
@@ -48,4 +44,7 @@ public class IsDate extends BaseMatcher<Date> {
 		}
 	}
 
+	public static Matcher<Date> dateOf(int yyyy, int mm, int dd) {
+		return new IsDate(yyyy, mm, dd);
+	}
 }
