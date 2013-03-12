@@ -28,7 +28,7 @@ public class IsDate extends BaseMatcher<Date> {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime((Date)actual);
 		if (yyyy != cal.get(Calendar.YEAR)) return false;
-		if (mm != cal.get(Calendar.MONTH)) return false;
+		if (mm != cal.get(Calendar.MONTH) + 1) return false;
 		if (dd != cal.get(Calendar.DATE)) return false;
 		return true;
 	}
@@ -40,7 +40,7 @@ public class IsDate extends BaseMatcher<Date> {
 		desc.appendValue(String.format("%d/%02d/%02d", yyyy, mm, dd));
 		if (actual != null) {
 			desc.appendText(" but actual is ");
-			desc.appendValue(new SimpleDateFormat("yyyy//mm/dd").format((Date) actual));
+			desc.appendValue(new SimpleDateFormat("yyyy/MM/dd").format((Date) actual));
 		}
 	}
 
