@@ -4,7 +4,13 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+// TestRunnerの設定
+// 省略した場合は JUnit4.class が利用される
+// JUnit4.class: @Test が付いているテストケース全て収集して実行する
+@RunWith(JUnit4.class)
 public class CalcTest {
 
 	@Test
