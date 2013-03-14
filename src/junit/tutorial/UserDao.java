@@ -1,11 +1,19 @@
 package junit.tutorial;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * テスト用のクラス
+ * @author ringo
+ *
+ */
 public class UserDao {
 
-	private List<User> dummyUserList = new ArrayList<User>();
+	public static List<User> dummyUserList;
+
+	UserDao() {
+		dummyUserList = DbUtils.dummyList;
+	}
 
 	public List<User> getList() {
 		return dummyUserList;
