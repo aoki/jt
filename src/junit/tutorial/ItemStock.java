@@ -3,14 +3,14 @@ package junit.tutorial;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ItemStock {
+public class ItemStock implements Stocks {
 
 	private Map<String, Integer> stocks;
-	
+
 	ItemStock() {
 		stocks = new HashMap<String, Integer>();
 	}
-	
+
 
 	public int size(String string) {
 		if (stocks.containsKey(string)) return stocks.get(string);
@@ -27,7 +27,7 @@ public class ItemStock {
 		} else {
 			stocks.put(string, i);
 		}
-		
+
 	}
 
 }
