@@ -3,24 +3,18 @@ package junit.tutorial;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-
 public class UserDaoRuleTest {
 	private UserDao sut;
-	private InMemoryDB db;
+
+	@Rule
+	public InMemoryDBRule db = new InMemoryDBRule();
 
 	@Before
 	public void setUp() throws Exception {
-		db= new InMemoryDB();
-		db.start();
 		sut = new UserDao();
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		db.shutdownNow();
 	}
 
 	@Test
