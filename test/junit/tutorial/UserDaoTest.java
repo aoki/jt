@@ -13,39 +13,39 @@ import org.junit.runner.RunWith;
 @RunWith(Enclosed.class)
 public class UserDaoTest {
 
-	public static class テーブルが空の場合 {
-		UserDao sut;
+  public static class テーブルが空の場合 {
+    UserDao sut;
 
-		@Before
-		public void setUp() throws Exception {
-			DbUtils.drop("users");
-			sut = new UserDao();
-		}
+    @Before
+    public void setUp() throws Exception {
+      DbUtils.drop("users");
+      sut = new UserDao();
+    }
 
-		@Test
-		public void getListで0件取得できる() throws Exception {
-			List<User> actual = sut.getList();
-			assertThat(actual, is(notNullValue()));
-			assertThat(actual.size(), is(0));
-		}
-	}
+    @Test
+    public void getListで0件取得できる() throws Exception {
+      List<User> actual = sut.getList();
+      assertThat(actual, is(notNullValue()));
+      assertThat(actual.size(), is(0));
+    }
+  }
 
-	public static class テーブルにサンプルデータが100件含まれる場合 {
-		UserDao sut;
+  public static class テーブルにサンプルデータが100件含まれる場合 {
+    UserDao sut;
 
-		@Before
-		public void setUp() throws Exception {
-			DbUtils.drop("users");
-			DbUtils.insert("users", getClass().getResource("users.yaml"));
-			sut = new UserDao();
-		}
+    @Before
+    public void setUp() throws Exception {
+      DbUtils.drop("users");
+      DbUtils.insert("users", getClass().getResource("users.yaml"));
+      sut = new UserDao();
+    }
 
-		@Test
-		public void getListで100件取得できる() throws Exception {
-			List<User> actual = sut.getList();
-			assertThat(actual, is(notNullValue()));
-			assertThat(actual.size(), is(100));
-		}
+    @Test
+    public void getListで100件取得できる() throws Exception {
+      List<User> actual = sut.getList();
+      assertThat(actual, is(notNullValue()));
+      assertThat(actual.size(), is(100));
+    }
 
-	}
+  }
 }

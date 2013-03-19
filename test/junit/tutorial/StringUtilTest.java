@@ -20,13 +20,13 @@ public class StringUtilTest {
 
   @Test
   public void isEmptyOrNillはAAAでfalseを返す() throws Exception {
-      // SetUp
-      String input = "AAA";
-      boolean expected = false;
-      // Exercise
-      boolean actual = StringUtil.isEmptyOrNull(input);
-      // Verify
-      assertThat(actual, is(expected));
+    // SetUp
+    String input = "AAA";
+    boolean expected = false;
+    // Exercise
+    boolean actual = StringUtil.isEmptyOrNull(input);
+    // Verify
+    assertThat(actual, is(expected));
   }
 
 }

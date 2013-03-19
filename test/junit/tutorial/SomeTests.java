@@ -8,5 +8,5 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({ CalculatorTest.class, UserFormTest.class })
 public class SomeTests {
-	// テストスイートクラスでメソッドの実装は不要
+  // テストスイートクラスでメソッドの実装は不要
 }
