@@ -19,7 +19,7 @@ public class LruCache<T> {
   }
 
   public T get(T key) {
-    
+
     return cache.get(key);
   }
 }
