@@ -4,6 +4,7 @@
 .metadata
 
 *.class
+bin/*.yaml
 
 # Package Files #
 #*.jar
