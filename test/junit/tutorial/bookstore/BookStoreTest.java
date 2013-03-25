@@ -5,7 +5,7 @@ import static org.hamcrest.CoreMatchers.sameInstance;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import static junit.tutorial.bookstore.BookStoreTestHelper.*;
+import static junit.tutorial.bookstore.BookStoreGroovyTestHelper.*;
 
 public class BookStoreTest {
 
