@@ -6,8 +6,8 @@ public class Registration {
    * @param age 年齢
    * @return 18歳以上ならばtrueを、18歳未満ならばfalse
    */
-  public static boolean canRegister(int age) {
-    return 18 <= age;
+  public static boolean canRegister(Age age) {
+    return 18 <= age.value;
   }
 
   /**
@@ -17,8 +17,8 @@ public class Registration {
    * @param usePastMonth 前月の利用回数
    * @return 20歳位上であり、メールマガジンに登録してあり、かつ先月の利用回数が1回以上ならtrue
    */
-  public static boolean isSpecialMember(int age, boolean isRegisterMailMagazine, int usePastMonth) {
-    if (age < 20) return false;
+  public static boolean isSpecialMember(Age age, boolean isRegisterMailMagazine, int usePastMonth) {
+    if (age.value < 20) return false;
     if (!isRegisterMailMagazine) return false;
     if (usePastMonth < 1) return false;
     return true;
