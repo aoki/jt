@@ -1,4 +1,4 @@
-package junit.tutorial;
+package junit.tutorial.parameterized;
 
 import org.junit.experimental.theories.DataPoint;
 import org.junit.experimental.theories.Theories;
