@@ -1,4 +1,4 @@
-package junit.tutorial;
+package junit.tutorial.registration;
 
 public class Registration {
   /**
