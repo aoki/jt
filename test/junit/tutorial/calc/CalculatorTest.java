@@ -1,4 +1,4 @@
-package junit.tutorial;
+package junit.tutorial.calc;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;

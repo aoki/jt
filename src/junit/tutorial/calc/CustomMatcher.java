@@ -1,4 +1,4 @@
-package junit.tutorial;
+package junit.tutorial.calc;
 
 public class CustomMatcher {
 
