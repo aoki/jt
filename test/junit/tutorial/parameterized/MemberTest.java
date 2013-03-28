@@ -2,7 +2,6 @@ package junit.tutorial.parameterized;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assume.assumeThat;
 import static org.junit.Assume.assumeTrue;
 
 import org.junit.experimental.theories.DataPoints;
