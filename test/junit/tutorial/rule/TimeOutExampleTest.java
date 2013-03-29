@@ -1,7 +1,5 @@
 package junit.tutorial.rule;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
