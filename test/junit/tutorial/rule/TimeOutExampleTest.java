@@ -10,11 +10,7 @@ public class TimeOutExampleTest {
 
   @Test
   public void 長い時間がかかるかもしれないテスト() throws Exception {
-    try {
-      java.util.concurrent.TimeUnit.MILLISECONDS.sleep(10);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
+    new junit.tutorial.Timeout().doLongTask();
   }
 
 }
