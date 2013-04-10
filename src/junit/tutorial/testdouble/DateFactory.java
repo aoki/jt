@@ -2,8 +2,6 @@ package junit.tutorial.testdouble;
 
 import java.util.Date;
 
-public class DateFactory {
-  Date newDate() {
-    return new Date();
-  }
+public interface DateFactory {
+  Date newDate();
 }

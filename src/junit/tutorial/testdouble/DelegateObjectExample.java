@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class DelegateObjectExample {
 
-  DateFactory dateFactory = new DateFactory();
+  DateFactory dateFactory = new DateFactoryImpl();
   Date date = new Date();
 
   public void doSomething() {

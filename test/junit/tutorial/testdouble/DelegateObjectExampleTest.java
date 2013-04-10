@@ -14,15 +14,16 @@ public class DelegateObjectExampleTest {
 
     final Date current = new Date();
     DelegateObjectExample sut = new DelegateObjectExample();
-    sut.dateFactory = new DateFactory() {
+    sut.dateFactory = new DateFactoryImpl() {
       @Override
       public Date newDate() {
+        System.out.println(current);
         return current;
       }
     };
     sut.doSomething();
     // このアサーションは実行タイミングによって成功にも失敗にもなる
-    assertThat(sut.date, is(new Date()));
+    assertThat(sut.date.toString(), is(new Date().toString()));
   }
 
 }
