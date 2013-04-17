@@ -2,6 +2,10 @@ package junit.tutorial.testdouble.stub;
 
 public class UserNotFoundException extends Exception {
 
+  public UserNotFoundException(String string) {
+    // TODO Auto-generated constructor stub
+  }
+
   /**
    *
    */
