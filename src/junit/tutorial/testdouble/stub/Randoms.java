@@ -3,7 +3,7 @@ package junit.tutorial.testdouble.stub;
 import java.util.List;
 
 public class Randoms {
-  RandomNumberGenerator generator = new RandomNumberGeneratorImpl();
+  public RandomNumberGenerator generator = new RandomNumberGeneratorImpl();
 
   public <T> T choice(List<T> options) {
     if (options.size() == 0) return null;
