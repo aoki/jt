@@ -3,6 +3,7 @@ package junit.tutorial.testdouble.mockito;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -35,5 +36,12 @@ public class MockitoTest {
     when(stub.get(1)).thenReturn("World");
     when(stub.get(2)).thenThrow(new IndexOutOfBoundsException());
     stub.get(2); // 例外が創出される
+  }
+
+  @Test(expected = RuntimeException.class)
+  public void void型を返すスタブメソッド() {
+    List<String> stub = mock(List.class);
+    doThrow(new RuntimeException()).when(stub).clear();
+    stub.clear();
   }
 }
