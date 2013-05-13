@@ -1,6 +1,7 @@
 package junit.tutorial.testdouble.mockito;
 
 import static org.hamcrest.CoreMatchers.is;
+
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyInt;
@@ -10,7 +11,9 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.spy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -67,5 +70,17 @@ public class MockitoTest {
     verify(mock).clear();
     verify(mock, times(2)).add("Hello");
     verify(mock, never()).add("World");
+  }
+
+  @Test
+  public void 部分的なモックオブジェクト() {
+    List<String> list = new ArrayList<String>();
+    List<String> spy = spy(list);
+    when(spy.size()).thenReturn(100);
+    spy.add("Hello");
+
+    assertThat(spy.get(0), is("Hello"));
+    assertThat(spy.size(), is(100));
+
   }
 }
