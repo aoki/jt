@@ -6,6 +6,9 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -53,5 +56,16 @@ public class MockitoTest {
     assertThat(stub.get(0), is("Hello"));
     assertThat(stub.get(1), is("Hello"));
     assertThat(stub.get(999), is("Hello"));
+  }
+
+  @Test
+  public void スタブメソッドの検証() {
+    List<String> mock = mock(List.class);
+    mock.clear();
+    mock.add("Hello");
+    mock.add("Hello");
+    verify(mock).clear();
+    verify(mock, times(2)).add("Hello");
+    verify(mock, never()).add("World");
   }
 }
