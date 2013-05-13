@@ -3,6 +3,7 @@ package junit.tutorial.testdouble.mockito;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -43,5 +44,14 @@ public class MockitoTest {
     List<String> stub = mock(List.class);
     doThrow(new RuntimeException()).when(stub).clear();
     stub.clear();
+  }
+
+  @Test
+  public void 任意の整数に対するスタブメソッド() {
+    List<String> stub = mock(List.class);
+    when(stub.get(anyInt())).thenReturn("Hello");
+    assertThat(stub.get(0), is("Hello"));
+    assertThat(stub.get(1), is("Hello"));
+    assertThat(stub.get(999), is("Hello"));
   }
 }
