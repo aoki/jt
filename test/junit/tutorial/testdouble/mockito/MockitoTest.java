@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -81,6 +82,16 @@ public class MockitoTest {
 
     assertThat(spy.get(0), is("Hello"));
     assertThat(spy.size(), is(100));
+  }
 
+  @Test
+  public void スパイオブジェクトの作成() {
+    List<String> list = new java.util.LinkedList<String>();
+    List<String> spy = spy(list);
+    doReturn("Mockito").when(spy).get(1);
+    spy.add("Hello");
+    spy.add("World");
+    assertThat(spy.get(0), is("Hello"));
+    assertThat(spy.get(1), is("Mockito"));
   }
 }
